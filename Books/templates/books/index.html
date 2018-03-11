@@ -1,0 +1,44 @@
+{% extends 'books/base.html' %}
+
+<!DOCTYPE html>
+	<html>
+	<head></head>
+		<body>
+			{% block body %}
+				<ul class="container1">
+				{% for book in book_list %}
+					<div class="div1">
+						<li class="item"><a href="{% url 'book' book.pk %}"><img draggable="true" src="{{ book.logo.url }}" width="230px" height="300px"></a><br></li>
+						</div>
+				{% endfor %}
+				</ul>
+			</div>
+			<div class="paginate" >
+				<center>
+					{% if is_paginated %}
+					<ul class="pagination">
+					    {% if page_obj.has_previous %}
+	    				<a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+					    {% else %}
+					    <span class="disabled"><span>&laquo;</span></span>
+	    				{% endif %}
+	    				{% for i in paginator.page_range %}
+	      				{% if page_obj.number == i %}
+	        			<span class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></span>
+	      				{% else %}
+	        			<a href="?page={{ i }}">{{ i }}</a>
+	      				{% endif %}
+	    				{% endfor %}
+	    				{% if page_obj.has_next %}
+	      				<a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+	    				{% else %}
+	      				<span class="disabled"><span>&raquo;</span></span>
+	    				{% endif %}
+					</ul>
+					{% endif %}
+				</center>
+			</div>
+		</body>
+	</html>
+	{% include 'books/footer.html' %}
+	{% endblock %}

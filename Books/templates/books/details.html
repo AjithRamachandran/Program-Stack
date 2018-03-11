@@ -1,0 +1,27 @@
+{% extends 'books/base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head></head>
+{% block body %}
+
+<div class="div">
+	<div class="sub1">
+		<center>
+			<img src="{{ book.logo.url }}" width="300px" height="350px">
+			<h3>{{ book.name }}</h3>
+		</center>
+	</div>
+	<div class="sub2">
+	<left>
+		<b><font size="4">Title</b>:<i> {{ book.name }} </i><br>
+		<b>Author(s)</b>:<i> {{ book.author }} </i><br>
+		<b>Download/Buy</b>:<i> <a class="details" href="{{ book.download }}">here</a></i></font>
+	</left>
+	</div>
+<title>{{ book.name }}</title>
+
+
+	{% include 'books/footer.html' %}
+
+{% endblock %}

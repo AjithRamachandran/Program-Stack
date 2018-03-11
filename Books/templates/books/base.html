@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+
+</head>
+<body>
+  <header id="header">
+<div class="navbar">
+	<a class="header" href="/">Program_Stack</a> 
+  <div class="dropdown">
+	<button class="dropbtn" onclick="myFunction()"> Contact Me
+	  <i class="fa fa-caret-down"></i>
+	</button>
+	<div class="dropdown-content" id="myDropdown">
+	<a href="mailto:ajithar204@gmail.com">Mail me!</a>
+	<a href="mailto:ajithar204@gmail.com?subject=Report an Issue">Report an issue!</a>
+	<!-- <a href="/donate">Donate Me!</a><br> -->
+	</div>
+  </div>
+
+<center>
+		<form method="GET" action="{% url 'search' %}">
+			<input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}">
+		</form>
+
+		</center>
+	</div>
+</header>
+<script src="{% static 'js/script.js' %}"></script>
+
+{% block body %}{% endblock %}

@@ -349,3 +349,11 @@
 	button {
 		background: transparent;
 	}
+
+@media (min-width: 576px) {
+  #header {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }

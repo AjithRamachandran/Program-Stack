@@ -134,5 +134,3 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT =  os.path.join(BASE_DIR, 'Books/static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Books/media')
-
-
